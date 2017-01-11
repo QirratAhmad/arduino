@@ -2,14 +2,16 @@ void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
   pinMode (13, OUTPUT);
+  Serial.println ("HI");
+  Serial.println ("How Are You") ;
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
   digitalWrite (13, HIGH);
-  Serial.println ("ON");
+  Serial.println ("OFF");
   delay (1000);
   digitalWrite (13, LOW);
-  Serial.println ("OFF");
+  Serial.println ("ON");
   delay (1000);
 }
