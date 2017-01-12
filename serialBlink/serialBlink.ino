@@ -1,17 +1,18 @@
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
+  Serial.println ("How are you?");
+  Serial.println("Send 'ON' to turn on the LED.");
+  Serial.println("Send 'OFF' to turn off the LED.");
   pinMode (13, OUTPUT);
-  Serial.println ("HI");
-  Serial.println ("How Are You") ;
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
-  digitalWrite (13, HIGH);
-  Serial.println ("OFF");
-  delay (1000);
-  digitalWrite (13, LOW);
-  Serial.println ("ON");
-  delay (1000);
+  if (Serial.readString() == "On") {
+    digitalWrite(13, HIGH);
+  }
+  else if (Serial.readString() == "Off") {
+    digitalWrite(13, LOW);
+  }
 }
